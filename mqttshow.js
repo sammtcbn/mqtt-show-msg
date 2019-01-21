@@ -5,8 +5,8 @@ var topic = '#';
 var mqtt = require ('mqtt');
 var opt = {
     port:1883,
-    username: '',
-    password: '',
+//    username: '',
+//    password: '',
     clientId: 'nodejs'
 };
 
