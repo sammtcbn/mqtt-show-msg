@@ -4,8 +4,9 @@ mqtt-show-msg is a MQTT monitor tool written by node.js that scubscribe to topic
 I always use this tool to debug MQTT message while I am programming based on MQTT.
 
 # Requirement
-mqtt-show-msg will need mqtt module.
+mqtt-show-msg will need mqtt, minimist module.
 > $ npm install mqtt
+> $ npm install minimist
 
 # Usage
 > ./mqttshow.js [MQTT_BROKER_IP] [TOPIC]

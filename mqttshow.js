@@ -1,22 +1,63 @@
 #!/usr/bin/env node
+/* Usage:
+    mqttshow.js [option] ...
+    option:
+        --ip
+            MQTT Broker ip address
+
+        --port
+            MQTT Broker port
+
+        --username=
+            MQTT Broker username
+
+        --password=
+            MQTT Broker password
+
+        --topic=
+            topic to be monitored.
+*/
+
+const minimist = require('minimist');
+
+let args = minimist(process.argv.slice(2), {
+    string: ["ip"],
+    string: ["port"],
+    string: ["username"],
+    string: ["password"],
+    string: ["topic"],
+});
 
 var broker = '127.0.0.1';
 var topic = '#';
 var mqtt = require ('mqtt');
 var opt = {
     port:1883,
-//    username: '',
-//    password: '',
     clientId: 'nodejs'
 };
 
-if (process.argv.length != 4)
-{
-    console.log ("Usage:  program [mqtt broker ip] [topic]");
-    process.exit(0);
-}
-broker = process.argv[2];
-topic = process.argv[3];
+if (typeof args.ip !== 'undefined')
+    broker = args.ip;
+
+if (typeof args.port !== 'undefined')
+    opt.port = args.port;
+
+if (typeof args.username !== 'undefined')
+    opt.username = args.username;
+
+if (typeof args.password !== 'undefined')
+    opt.password = args.password;
+
+if (typeof args.topic !== 'undefined')
+    topic = args.topic;
+
+/* debug
+console.log ('broker  : ' + broker);
+console.log ('port    : ' + opt.port);
+console.log ('username: ' + opt.username);
+console.log ('password: ' + opt.password);
+console.log ('topic   : ' + topic);
+*/
 
 function convertUTCDateToLocalDate(date) {
     var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
