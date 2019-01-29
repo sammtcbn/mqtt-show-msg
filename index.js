@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Usage:
-    mqttshow.js [option] ...
+    mqtt-show-msg [option] ...
     option:
         --ip
             MQTT Broker ip address
