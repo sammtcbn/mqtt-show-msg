@@ -1,22 +1,4 @@
 #!/usr/bin/env node
-/* Usage:
-    mqtt-show-msg [option] ...
-    option:
-        --ip
-            MQTT Broker ip address
-
-        --port
-            MQTT Broker port
-
-        --username=
-            MQTT Broker username
-
-        --password=
-            MQTT Broker password
-
-        --topic=
-            topic to be monitored.
-*/
 
 const minimist = require('minimist');
 

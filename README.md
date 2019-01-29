@@ -9,10 +9,17 @@ I always use this tool to debug MQTT message while I am programming based on MQT
 > $ sudo npm install -g
 
 # Usage
-> mqtt-show-msg [MQTT_BROKER_IP] [TOPIC]
+> mqtt-show-msg [option] ...
+> option:
+>   --ip        : MQTT Broker ip address
+>   --port      : MQTT Broker port
+>   --username  : MQTT Broker username
+>   --password  : MQTT Broker password
+>   --topic     : topic to be monitored.
 
-Ex:
-> mqtt-show-msg test.mosquitto.org '#'
+# Example:
+> mqtt-show-msg --ip=test.mosquitto.org --topic='#'
+> mqtt-show-msg --ip=10.0.0.1 --port:8888 --username=sam --password=12345 --topic='/sensor/#'
 
 # Todo
 1. add parameter to only show topic, not messages
