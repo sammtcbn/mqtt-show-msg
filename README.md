@@ -18,8 +18,8 @@ I always use this tool to debug MQTT message while I am programming based on MQT
 >   --topic     : topic to be monitored.
 
 # Example:
-> mqtt-show-msg --ip=test.mosquitto.org --topic='#'
-> mqtt-show-msg --ip=10.0.0.1 --port:8888 --username=sam --password=12345 --topic='/sensor/#'
+> mqtt-show-msg --ip=test.mosquitto.org --topic="#"
+> mqtt-show-msg --ip=10.0.0.1 --port:8888 --username=sam --password=12345 --topic="/sensor/#"
 
 # Todo
 1. add parameter to only show topic, not messages
