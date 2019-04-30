@@ -71,6 +71,18 @@ client.on ('connect', function () {
     client.subscribe (topic);
 });
 
+client.on ('close', function () {
+    var currtime = getMyTime();
+    console.log (currtime + ' broker ' + broker + ' closed');
+    console.log (' ');
+});
+
+client.on ('reconnect', function () {
+    var currtime = getMyTime();
+    console.log (currtime + ' broker ' + broker + ' reconnect');
+    console.log (' ');
+});
+
 client.on ('message', function (topic, msg) {
     var currtime = getMyTime();
     console.log (currtime + ' topic: ' + '\x1b[36m' + topic + '\x1b[0m');
